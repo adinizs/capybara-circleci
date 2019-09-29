@@ -1,5 +1,4 @@
-# Amaro Test QA
-Teste de avaliação da Amaro.
+# Cucumber Capybara Test QA
 
 ## Dependencies
 
