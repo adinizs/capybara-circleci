@@ -1,10 +1,12 @@
 Dado("que eu acesse a página de login") do
-    visit '/identify'
+    visit '/login'
+    @login = LoginPage.new
+    @login.acessa_pag_login
 end
   
-Quando("eu informar um CPF {string} e a senha {string}") do |cpf, senha|
+Quando("eu informar o username {string} e a senha {string}") do |user, senha|
     @login = LoginPage.new
-    @login.realiza_login(cpf, senha)
+    @login.realiza_login(user, senha)
 end
   
   

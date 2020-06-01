@@ -1,18 +1,21 @@
 class LoginPage < SitePrism::Page
 
     
-    element :cpf_or_email, '[name=emailOrCpf]'
-    element :btn_enviar, '.btn-cta'
+    element :user_field, '#username'
     element :pwd, '[name="password"]'
     element :btn_register, 'a[href="/register"]'
     element :msg_pw_invalid, '.app__alert__content'
+    element :login_page, '[href="/login"]'
+    element :btn_entrar, '[value="Login"]'
 
-    def realiza_login(cpf, senha)
-        cpf_or_email.set(cpf)
-        btn_enviar.click
-        wait_until_pwd_visible
+    def acessa_pag_login
+        login_page.click
+    end
+
+    def realiza_login(user, senha)
+        user_field.set(user)
         pwd.set(senha)
-        btn_enviar.click
+        btn_entrar.click
     end
 
     def new_cpf

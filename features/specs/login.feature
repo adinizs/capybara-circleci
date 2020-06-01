@@ -6,12 +6,12 @@
     Esquema do Cenário: Login com senha inválida
 
     Dado que eu acesse a página de login
-    Quando eu informar um CPF "<cpf>" e a senha "<senha>"
+    Quando eu informar o username "<user>" e a senha "<senha>"
     Então verifico a mensagem "<msg>" de senha inválida
 
     Exemplos:
-    |cpf        |senha    |msg                              |
-    |37474584832|123456   |Senha incorreta. Tente novamente.|
+    |user        |senha    |msg                              |
+    |37474584832 |123456   |Senha incorreta. Tente novamente.|
 
 
 
@@ -19,10 +19,10 @@
     Esquema do Cenário: Login com sucesso
 
     Dado que eu acesse a página de login
-    Quando eu informar um CPF "<cpf>" e a senha "<senha>"
+    Quando eu informar o username "<user>" e a senha "<senha>"
     Então verifico a mensagem "<msg>" de sucesso
 
 
     Exemplos:
-    |cpf        |senha    |msg          |
-    |37474584832|ads270190|Olá, Anderson|
+    |user        |senha          |msg  |
+    |diniz       |9kxy5XmNy@uzrJP|diniz|
