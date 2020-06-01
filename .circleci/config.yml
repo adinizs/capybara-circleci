@@ -13,6 +13,8 @@ jobs: # a collection of steps
           RAILS_ENV: test
     steps: # a collection of executable commands
       - checkout # special step to check out source code to working directory
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       # Which version of bundler?
       - run:
           name: Which bundler?
@@ -23,14 +25,6 @@ jobs: # a collection of steps
           keys:
             - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
             - rails-demo-bundle-v2-
-
-      - run:
-      name: Install Chrome
-      command: |
-        curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo dpkg -i google-chrome.deb
-        sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
-        rm google-chrome.deb
       
       - run:
           name: Bundle Install
