@@ -1,4 +1,12 @@
 version: 2
+nightly:
+     triggers:
+       - schedule:
+           cron: "53 12 * * *"
+           filters:
+             branches:
+               only:
+                 - master
 jobs:
   build:
     parallelism: 1
