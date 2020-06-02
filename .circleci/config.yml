@@ -1,12 +1,4 @@
 version: 2
-nightly:
-     triggers:
-       - schedule:
-           cron: "55 16 * * *"
-           filters:
-             branches:
-               only:
-                 - master
 jobs:
   build:
     parallelism: 1
@@ -58,6 +50,15 @@ jobs:
           path: ~/capybara-circleci/features
 workflows:
    version: 2
+   nightly:
+     triggers:
+       - schedule:
+           cron: "55 16 * * *"
+           filters:
+             branches:
+               only:
+                 - master
+                 - beta
 
    all_commits:
        jobs:
