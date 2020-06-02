@@ -18,8 +18,8 @@ end
   
   
 Então("verifico a mensagem {string} de sucesso") do |msg|
-    @account_msg = AccountPage.new
-    expect(@account_msg.msg_ola).to have_content msg
+    @home = HomePage.new
+    expect(@home.msg_ola).to have_content msg
 end
 
 Então("verifico a mensagem {string} de senha inválida") do |pw_invalid|
