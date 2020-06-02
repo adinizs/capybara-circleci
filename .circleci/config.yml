@@ -2,7 +2,7 @@ version: 2
 nightly:
      triggers:
        - schedule:
-           cron: "53 12 * * *"
+           cron: "0 13 * * *"
            filters:
              branches:
                only:
