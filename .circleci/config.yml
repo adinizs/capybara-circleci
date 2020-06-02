@@ -53,14 +53,14 @@ workflows:
    nightly:
      triggers:
        - schedule:
-           cron: "55 16 * * *"
+           cron: "0 17 * * *"
            filters:
              branches:
                only:
                  - master
                  - beta
      jobs:
-       - test
+       - build
 
    all_commits:
        jobs:
