@@ -33,11 +33,3 @@ ou
 ```
   bundle exec cucumber
 ```
-
-### TAGS
-Tags por tipos de teste:
-@login - Para o cenário de Login
-
-@senha_invalida - Para o cenário de senha inválida
-
-@cadastro - Para o cenário de cadastro de um novo cliente# capybara-cucumber-automation
