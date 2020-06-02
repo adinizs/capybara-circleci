@@ -17,13 +17,5 @@ class LoginPage < SitePrism::Page
         pwd.set(senha)
         btn_entrar.click
     end
-
-    def new_cpf
-        fcpf = Faker::CPF.numeric
-        cpf_or_email.set fcpf
-        btn_enviar.click
-        wait_until_btn_register_visible
-        btn_register.click
-    end
 end
 

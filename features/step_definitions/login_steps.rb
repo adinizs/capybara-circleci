@@ -8,6 +8,13 @@ Quando("eu informar o username {string} e a senha {string}") do |user, senha|
     @login = LoginPage.new
     @login.realiza_login(user, senha)
 end
+
+Quando("eu informar o username e a senha") do
+    @login = LoginPage.new
+    user = "diniz"
+    senha = "9kxy5XmNy@uzrJP"
+    @login.realiza_login(user, senha)
+end
   
   
 Então("verifico a mensagem {string} de sucesso") do |msg|
