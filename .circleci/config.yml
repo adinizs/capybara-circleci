@@ -5,8 +5,8 @@ jobs: # a collection of steps
     docker: # run the steps with Docker
       - image: circleci/ruby:2.6-rc-node # ...with this image as the primary container; this is where all `steps` will run
         environment: # environment variables for primary container
-          BUNDLE_JOBS: 3
-          BUNDLE_RETRY: 3
+          BUNDLE_JOBS: "3"
+          BUNDLE_RETRY: "3"
           BUNDLE_PATH: vendor/bundle
           PGHOST: 127.0.0.1
           PGUSER: circleci-demo-ruby
@@ -23,7 +23,7 @@ jobs: # a collection of steps
           keys:
             - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
             - rails-demo-bundle-v2-
-      
+
       - run:
           name: Bundle Install
           command: bundle check || bundle install
@@ -33,20 +33,16 @@ jobs: # a collection of steps
           key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-
-      - run:
-          name: Install Latest Browsers
-          command: |
-            wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' sudo apt-get update && sudo apt-get upgrade firefox sudo apt-get install google-chrome-stable
+            
       - run:
           name: Run Cucumber 
           command: |
-            bundle exec cucumber --format html --out=test_results/features_report.html --format pretty
+            bundle exec cucumber -t@login --format html --out=features/report.html --format pretty
       # Save test results for timing analysis
       - store_test_results:
-          path: ~/HTTParty/api-test/test_results
+          path: ~/HTTParty/features
       - store_artifacts:
-          path: ~/HTTParty/api-test/test_results
+          path: ~/HTTParty/features
 workflows:
    version: 2
 
