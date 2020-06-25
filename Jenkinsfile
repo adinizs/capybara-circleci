@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building or resolve dependencies!'
+                sh 'gem install bundler'
                 sh 'bundle install'
             }
         }
