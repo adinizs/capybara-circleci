@@ -41,9 +41,9 @@ jobs:
             bundle exec cucumber --format html --out=features/report.html --format pretty
       # Save test results for timing analysis
       - store_test_results:
-          path: ~/capybara-circleci/features
+          path: ~/capybara-circleci/logs
       - store_artifacts:
-          path: ~/capybara-circleci/features
+          path: ~/capybara-circleci/logs
 workflows:
    version: 2
    nightly:
