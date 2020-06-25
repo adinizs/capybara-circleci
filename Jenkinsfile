@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests'
-                sh bundle exec cucumber -p ci
+                sh 'bundle exec cucumber -p ci'
             }
         }
         stage('UAT') {
