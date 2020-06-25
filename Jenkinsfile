@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'adiniz/rubywd'
+            image 'papitoio/rubywd'
         }
     }
     
