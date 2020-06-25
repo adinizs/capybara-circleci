@@ -5,5 +5,5 @@ Before do
   
   After do |scenario|
     screenshot = page.save_screenshot("logs/screenshots/#{scenario.__id__}.png")
-    embed(screenshot, "image/png", "Screenshot")
+    attach(screenshot, "image/png")
   end
