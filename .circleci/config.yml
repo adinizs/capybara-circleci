@@ -38,7 +38,7 @@ jobs:
       - run:
           name: Run Cucumber 
           command: |
-            bundle exec cucumber --format html --out=features/report.html --format pretty
+            bundle exec cucumber -p ci
       # Save test results for timing analysis
       - store_test_results:
           path: ~/capybara-circleci/logs
