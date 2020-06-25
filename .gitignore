@@ -1,2 +1,5 @@
-logs
+logs/screeshots
+logs/*.json
+logs/*.html
 report.html
+Gemfile.lock
