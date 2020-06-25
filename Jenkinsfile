@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'papitoio/rubywd'
+            image 'adiniz/rubywd'
         }
     }
     
@@ -25,15 +25,9 @@ pipeline {
                 }
             }
         }
-        stage('UAT') {
-            steps{
-                echo 'Wait for User Acceptence'
-                input(message: 'Go to production?', ok: 'Yes')
-            }
-        }
-        stage('Prod') {
+        stage('Message') {
             steps {
-                echo 'WebApp is Ready!'
+                echo 'Test run finished!'
             }
         }
     }
